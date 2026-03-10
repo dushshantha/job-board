@@ -1,0 +1,100 @@
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-6);
+  background-color: var(--color-surface);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-xl);
+}
+
+.tag-cloud__label {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.tag-cloud__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  flex: 1;
+}
+
+.tag-cloud__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  border: var(--border-width) solid var(--color-primary);
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), color var(--transition-fast),
+    transform var(--transition-fast);
+  white-space: nowrap;
+}
+
+.tag-cloud__tag:hover {
+  background-color: var(--color-primary);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.tag-cloud__tag--active {
+  background-color: var(--color-primary);
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(99, 102, 241, 0.35);
+}
+
+.tag-cloud__tag--md {
+  font-size: var(--text-sm);
+  padding: var(--space-1) var(--space-3);
+}
+
+.tag-cloud__tag--lg {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  padding: var(--space-2) var(--space-4);
+}
+
+.tag-cloud__count {
+  font-size: 10px;
+  font-weight: var(--font-normal);
+  opacity: 0.75;
+  background-color: rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-full);
+  padding: 0 5px;
+  line-height: 16px;
+}
+
+.tag-cloud__tag--active .tag-cloud__count {
+  background-color: rgba(255, 255, 255, 0.25);
+  opacity: 1;
+}
+
+.tag-cloud__clear {
+  margin-left: auto;
+  flex-shrink: 0;
+  padding: var(--space-1) var(--space-3);
+  border: none;
+  background: none;
+  color: var(--color-danger);
+  font-size: var(--text-sm);
+  font-family: inherit;
+  font-weight: var(--font-medium);
+  cursor: pointer;
+  text-decoration: underline;
+  transition: opacity var(--transition-fast);
+}
+
+.tag-cloud__clear:hover {
+  opacity: 0.75;
+}

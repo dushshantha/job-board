@@ -1,6 +1,6 @@
 import './SearchBar.css'
 
-function SearchBar({ value, onChange, placeholder = 'Search jobs by title or keyword…' }) {
+function SearchBar({ value, onChange, placeholder = 'Search jobs by title, company, or keyword…' }) {
   return (
     <div className="search-bar">
       <svg
