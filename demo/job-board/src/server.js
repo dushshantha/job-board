@@ -180,8 +180,10 @@ app.get('/api/jobs/:id/applications', (req, res) => {
 // Start server
 // ---------------------------------------------------------------------------
 
-app.listen(PORT, () => {
-  console.log(`Job Board API running on http://localhost:${PORT}`);
-});
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(PORT, () => {
+    console.log(`Job Board API running on http://localhost:${PORT}`);
+  });
+}
 
 export default app;
