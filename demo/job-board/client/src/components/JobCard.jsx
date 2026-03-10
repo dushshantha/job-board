@@ -44,8 +44,9 @@ function CompanyLogo({ name, logoUrl }) {
   )
 }
 
-function JobCard({ job }) {
+function JobCard({ job, activeTag, onTagClick }) {
   const salary = formatSalary(job.salary_min, job.salary_max)
+  const tags = Array.isArray(job.tags) ? job.tags : []
 
   return (
     <article className="job-card">
@@ -95,6 +96,21 @@ function JobCard({ job }) {
         {job.remote === 1 || job.remote === true ? (
           <span className="job-card__tag job-card__tag--remote">Remote</span>
         ) : null}
+        {tags.map((tag) => (
+          <button
+            key={tag}
+            type="button"
+            className={[
+              'job-card__tag job-card__tag--skill',
+              activeTag === tag ? 'job-card__tag--skill-active' : '',
+            ].join(' ').trim()}
+            onClick={() => onTagClick && onTagClick(tag)}
+            aria-label={`Filter by ${tag}`}
+            aria-pressed={activeTag === tag}
+          >
+            {tag}
+          </button>
+        ))}
       </div>
     </article>
   )

@@ -1,0 +1,204 @@
+/* ============================================================
+   Job List Page
+   ============================================================ */
+
+.job-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding-block: var(--space-8);
+}
+
+/* Hero / search section */
+.job-list__hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  text-align: center;
+  max-width: 640px;
+  margin-inline: auto;
+  width: 100%;
+}
+
+.job-list__heading {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text);
+}
+
+.job-list__subheading {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  margin-top: calc(-1 * var(--space-2));
+}
+
+/* Toolbar row */
+.job-list__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-6);
+  background-color: var(--color-surface);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-xl);
+}
+
+.job-list__toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.job-list__sort-label {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+.job-list__sort-select {
+  padding: var(--space-1) var(--space-3);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-full);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-size: var(--text-sm);
+  font-family: inherit;
+  cursor: pointer;
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.job-list__sort-select:focus {
+  border-color: var(--color-primary);
+}
+
+.job-list__count {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+/* Job grid */
+.job-list__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-4);
+}
+
+/* Error state */
+.job-list__error {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-6);
+  background-color: #fef2f2;
+  border: var(--border-width) solid #fecaca;
+  border-radius: var(--radius-lg);
+  color: var(--color-danger);
+  font-size: var(--text-sm);
+}
+
+/* Empty state */
+.job-list__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-16) var(--space-6);
+  text-align: center;
+}
+
+.job-list__empty-icon {
+  color: var(--color-text-muted);
+  opacity: 0.5;
+}
+
+.job-list__empty-title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  color: var(--color-text);
+}
+
+.job-list__empty-body {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  max-width: 380px;
+}
+
+/* ============================================================
+   Skeleton loading cards
+   ============================================================ */
+
+@keyframes shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-border) 25%,
+    #f1f5f9 50%,
+    var(--color-border) 75%
+  );
+  background-size: 800px 100%;
+  animation: shimmer 1.4s infinite linear;
+  border-radius: var(--radius-sm);
+}
+
+.skeleton--logo {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.skeleton--text {
+  height: 14px;
+  border-radius: var(--radius-sm);
+}
+
+.skeleton--text-xs { width: 80px; }
+.skeleton--text-sm { width: 120px; }
+.skeleton--text-md { width: 200px; }
+.skeleton--text-lg { width: 75%; height: 20px; }
+
+.skeleton--tag {
+  width: 70px;
+  height: 22px;
+  border-radius: var(--radius-full);
+}
+
+.skeleton-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-6);
+  background-color: var(--color-surface);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-xl);
+}
+
+.skeleton-card__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.skeleton-card__meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex: 1;
+}
+
+.skeleton-card__tags {
+  display: flex;
+  gap: var(--space-2);
+}
+

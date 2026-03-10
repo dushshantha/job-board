@@ -125,3 +125,23 @@
   color: var(--color-success);
   background-color: #f0fdf4;
 }
+
+/* Skill tags (clickable) */
+.job-card__tag--skill {
+  cursor: pointer;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background-color: var(--color-primary-light);
+  font-family: inherit;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.job-card__tag--skill:hover {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.job-card__tag--skill-active {
+  background-color: var(--color-primary);
+  color: #fff;
+}
